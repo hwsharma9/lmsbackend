@@ -692,6 +692,78 @@ class DatabaseRouteSeeder extends Seeder
                 'created_at' => NOW(),
                 'updated_at' => NOW()
             ],
+            [
+                'id' => 57,
+                'resides_at' => 'manage',
+                'controller_name' => 'SocialController',
+                'route' => 'socials',
+                'named_route' => 'socials.index',
+                'method' => 'get',
+                'function_name' => 'index',
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
+            [
+                'id' => 58,
+                'resides_at' => 'manage',
+                'controller_name' => 'SocialController',
+                'route' => 'socials/create',
+                'named_route' => 'socials.create',
+                'method' => 'get',
+                'function_name' => 'create',
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
+            [
+                'id' => 59,
+                'resides_at' => 'manage',
+                'controller_name' => 'SocialController',
+                'route' => 'socials',
+                'named_route' => 'socials.store',
+                'method' => 'post',
+                'function_name' => 'store',
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
+            [
+                'id' => 60,
+                'resides_at' => 'manage',
+                'controller_name' => 'SocialController',
+                'route' => 'socials/{social}/edit',
+                'named_route' => 'socials.edit',
+                'method' => 'get',
+                'function_name' => 'edit',
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
+            [
+                'id' => 61,
+                'resides_at' => 'manage',
+                'controller_name' => 'SocialController',
+                'route' => 'socials/{social}/update',
+                'named_route' => 'socials.update',
+                'method' => 'patch',
+                'function_name' => 'update',
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
+            [
+                'id' => 62,
+                'resides_at' => 'manage',
+                'controller_name' => 'SocialController',
+                'route' => 'socials/{social}',
+                'named_route' => 'socials.destroy',
+                'method' => 'delete',
+                'function_name' => 'destroy',
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
         ];
         DatabaseRoute::insert($details);
     }

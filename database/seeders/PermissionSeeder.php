@@ -451,6 +451,60 @@ class PermissionSeeder extends Seeder
                 'created_at' => '2023-10-27 10:27:38',
                 'updated_at' => '2023-10-27 10:27:38'
             ],
+            [
+                'id' => 49,
+                'name' => 'Show Social Urls List',
+                'guard_name' => 'admin',
+                'database_route_id' => 57,
+                'deleted_at' => NULL,
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
+            ],
+            [
+                'id' => 50,
+                'name' => 'Show Create Social Urls Page',
+                'guard_name' => 'admin',
+                'database_route_id' => 58,
+                'deleted_at' => NULL,
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
+            ],
+            [
+                'id' => 51,
+                'name' => 'Give Store Social Urls',
+                'guard_name' => 'admin',
+                'database_route_id' => 59,
+                'deleted_at' => NULL,
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
+            ],
+            [
+                'id' => 52,
+                'name' => 'Show Edit Social Urls Page',
+                'guard_name' => 'admin',
+                'database_route_id' => 60,
+                'deleted_at' => NULL,
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
+            ],
+            [
+                'id' => 53,
+                'name' => 'Give Update Social Urls Page',
+                'guard_name' => 'admin',
+                'database_route_id' => 61,
+                'deleted_at' => NULL,
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
+            ],
+            [
+                'id' => 54,
+                'name' => 'Give permission to Social Url',
+                'guard_name' => 'admin',
+                'database_route_id' => 62,
+                'deleted_at' => NULL,
+                'created_at' => '2023-10-27 10:27:38',
+                'updated_at' => '2023-10-27 10:27:38'
+            ],
         ];
         Permission::insert($permissions);
     }

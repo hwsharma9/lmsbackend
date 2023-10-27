@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\manage;
 
+use App\Http\Controllers\Controller;
 use App\Models\Social;
 use App\Http\Requests\StoreSocialRequest;
 use App\Http\Requests\UpdateSocialRequest;

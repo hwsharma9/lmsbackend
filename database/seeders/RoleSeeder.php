@@ -82,13 +82,5 @@ class RoleSeeder extends Seeder
         $roles = Role::find(1);
         $permissions = Permission::select(['id'])->get();
         $roles->givePermissionTo($permissions->pluck('id')->all());
-        // foreach ($roles as $role) {
-        //     if ($role->range !== '') {
-        //         $menu_ids = explode(',', $role->range);
-        //         $menus = AdminMenu::whereHas('permission')->whereIn('id', $menu_ids)->with(['permission'])->get();
-        //         // print_r($menus->pluck('permission.id')->toArray());
-        //         $role->givePermissionTo($menus->pluck('permission.id')->toArray());
-        //     }
-        // }
     }
 }
