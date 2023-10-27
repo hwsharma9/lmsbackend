@@ -18,6 +18,7 @@ class CreateMediaTable extends Migration
             $table->id();
             $table->foreignIdFor(User::class, 'created_by')->index();
             $table->foreignIdFor(User::class, 'updated_by')->index();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
