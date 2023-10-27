@@ -28,7 +28,7 @@ class Media extends Model
      */
     public function creator(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'created_by')->select(['id', 'first_name', 'last_name', 'email']);
+        return $this->belongsTo(Admin::class, 'created_by')->select(['id', 'first_name', 'last_name', 'email']);
     }
 
     /**
@@ -38,6 +38,6 @@ class Media extends Model
      */
     public function editor(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'updated_by')->select(['id', 'first_name', 'last_name', 'email']);
+        return $this->belongsTo(Admin::class, 'updated_by')->select(['id', 'first_name', 'last_name', 'email']);
     }
 }

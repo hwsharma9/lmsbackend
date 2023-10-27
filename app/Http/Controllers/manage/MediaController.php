@@ -38,14 +38,6 @@ class MediaController extends Controller
                     $action = $action->render();
 
                     return $action;
-                    $btn = '<form id="delete-form-' . $row['id'] . '" mehod="POST">' . method_field('DELETE') . csrf_field() . '<button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button></form>';
-                    // $btn = `
-                    //     <form id='delete-form-{$row['id']}' mehod="POST">
-                    //         {csrf_token()}
-                    //         <button type="submit" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('delete-form-{$row['id']}').submit();"><i class="fas fa-trash"></i></button>
-                    //     </form>
-                    // `;
-                    return $btn;
                 })
                 ->editColumn('updated_at', function ($row) {
                     return date('Y-m-d', strtotime($row['updated_at']));
