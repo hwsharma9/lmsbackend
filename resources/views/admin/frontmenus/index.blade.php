@@ -13,13 +13,15 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">{{ __('Menu Module') }}</li>
+                    <li class="breadcrumb-item active">{{ __('Front Menu Module') }}</li>
                     <li class="breadcrumb-item"><a href="javascript:void(0)">View</a></li>
                 </ol>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <div class="float-sm-right">
-                    <a href="{{route('manage.pages.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add</a>
+                    @if (Gate::allows('check-auth', 'manage.frontmenumodules.create'))
+                        <a href="{{route('manage.frontmenumodules.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add</a>
+                    @endif
                 </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -34,7 +36,7 @@
             <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title m-0">
-                        {{ __('MENU MODULE LIST') }}
+                        {{ __('FRONT MENU MODULE LIST') }}
                     </h3>
                 </div>
                 <!-- /.card-header -->
@@ -74,46 +76,28 @@
 <script src="{{asset('plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
 <script src="{{asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
 <script>
-    jQuery(function() {
-        jQuery('#dataTable').dataTable({
-            "processing": true,
-            "serverSide": true,
-            "ajax": "{{route('manage.pages.get-pages')}}",
-            "columnDefs": [
-                {
-                    "targets": 0,
-                    "data": 'id'
-                },
-                {
-                    "targets": 1,
-                    "data": 'title_hi'
-                },
-                {
-                    "targets": 2,
-                    "data": 'title_en'
-                },
-                {
-                    "targets": 3,
-                    "data": row => row.updated_at ? row.updated_at.split("T")[0] : '',
-                    'orderable': false
-                },
-                {
-                    "targets": 4,
-                    "data": row => row.status ? "{!!PublishStatus(1)!!}" : "{!!PublishStatus(0)!!}",
-                    'orderable': false
-                },
-                {
-                    "targets": 5,
-                    "data": row => row.is_default ? "{!!DefaultStatus(1)!!}" : "{!!DefaultStatus(0)!!}",
-                    'orderable': false
-                },
-                {
-                    "targets": 6,
-                    "data": (row) => {
-                        return `<a class="btn btn-primary" href="${location.origin}/manage/pages/${row.id}/edit"><i class="fas fa-edit"></i></a>`
-                    }
-                },
-            ]
+    $(function () {
+        var table = $('#dataTable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('manage.databaseroutes.index') }}",
+            order: [0, 'desc'],
+            columns: [
+                {data: 'id', name: 'id'},
+                {data: function(row) {
+                    return row.resides_at + "\\" + row.controller_name;
+                }, name: 'controller_name', searchable: false},
+                {data: 'route', name: 'route'},
+                {data: 'named_route', name: 'named_route'},
+                {data: 'method', name: 'method'},
+                {data: 'function_name', name: 'function_name'},
+                {data: 'action', name: 'action', orderable: false, searchable: false},
+            ],
+            'createdRow': function( row, data, dataIndex ) {
+                if (data['deleted_at'] != null) {
+                    $(row).addClass( 'bg-danger' ).attr('title', 'Model has been deleted!');
+                }
+            }
         });
     });
 </script>

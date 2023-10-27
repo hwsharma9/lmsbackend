@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Services\RouteService;
 use App\Models\DatabaseRoute;
 use Closure;
 use Illuminate\Http\Request;
@@ -35,7 +36,7 @@ class RoutePermission
             return response(view('admin.errors.unauthorized'));
         }
         return $next($request);
-    // }
+    }
 
     // public function userAuthorisedToRoute($current_route, $permissions)
     // {

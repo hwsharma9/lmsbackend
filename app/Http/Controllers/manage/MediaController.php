@@ -7,6 +7,8 @@ use App\Models\Media;
 use App\Http\Requests\StoreMediaRequest;
 use App\Http\Requests\UpdateMediaRequest;
 use App\Http\traits\FileUpload;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -21,11 +23,21 @@ class MediaController extends Controller
     public function index()
     {
         if (request()->ajax()) {
-            $data = Media::query()
+            $data = Media::query()->withTrashed()
                 ->with(['creator', 'editor', 'upload']);
             return DataTables::of($data)
                 ->addIndexColumn('id')
                 ->addColumn('action', function ($row) {
+                    $action = view('components.list-actions', [
+                        'actions' => [
+                            'edit' => 'manage.medias.edit',
+                            'delete' => 'manage.medias.destroy',
+                        ],
+                        'model' => $row
+                    ]);
+                    $action = $action->render();
+
+                    return $action;
                     $btn = '<form id="delete-form-' . $row['id'] . '" mehod="POST">' . method_field('DELETE') . csrf_field() . '<button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button></form>';
                     // $btn = `
                     //     <form id='delete-form-{$row['id']}' mehod="POST">
@@ -45,7 +57,8 @@ class MediaController extends Controller
                     return $row['editor']['first_name'] . ' ' . $row['editor']['last_name'];
                 })
                 ->editColumn('link', function ($row) {
-                    return asset(Storage::url($row['upload']['folder'] . '/' . $row['upload']['original_name']));
+                    // return Storage::url($row['upload']['folder'] . '/' . $row['upload']['original_name']);
+                    return $row['upload']['original_name'];
                 })
                 ->rawColumns(['action', 'created_by', 'updated_by', 'link'])
                 ->make(true);
@@ -126,8 +139,22 @@ class MediaController extends Controller
      * @param  \App\Models\Media  $media
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Media $media)
+    public function destroy(Media $media, Request $request)
     {
-        //
+        $upload = $media->upload;
+        $message = $upload->original_name  . " Restored successully!";
+        if ($request->has('restore') && $request->restore == 1) {
+            $media->restore();
+        } else {
+            if ($media->deleteOrFail() === false) {
+                return response(
+                    ["message" => "Couldn't delete the media with id {$media->id}", "action" => false],
+                    Response::HTTP_BAD_REQUEST
+                );
+            }
+            $message = $upload->original_name  . " softly deleted successully!";
+        }
+
+        return response(["message" => $message, "action" => true], Response::HTTP_OK);
     }
 }

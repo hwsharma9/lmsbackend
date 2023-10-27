@@ -34,10 +34,15 @@ class UserController extends Controller
             return DataTables::of($data)
                 ->addIndexColumn('id')
                 ->addColumn('action', function ($row) {
+                    $action = view('components.list-actions', [
+                        'actions' => [
+                            'edit' => 'manage.users.edit',
+                        ],
+                        'model' => $row
+                    ]);
+                    $action = $action->render();
 
-                    $btn = '<a class="btn btn-primary" href="' . route('manage.users.edit', ['user' => $row['id']]) . '"><i class="fas fa-edit"></i></a>';
-
-                    return $btn;
+                    return $action;
                 })
                 ->editColumn('updated_at', function ($row) {
                     return date('Y-m-d', strtotime($row['updated_at']));

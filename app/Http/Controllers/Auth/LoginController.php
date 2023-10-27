@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
+use App\Models\DatabaseRoute;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -88,9 +90,18 @@ class LoginController extends Controller
     public function adminLogin(Request $request)
     {
         if ($this->guardLogin($request, 'admin')) {
-            // dd(Auth::user());
-            // session(['role_name' => Auth::user()->roles[0]->name]);
-            session(['role_name' => 'Super Admin']);
+            $auth_user = Admin::with(['roles.permissions'])->find(Auth::guard('admin')->id());
+            session(['user_roles' => $auth_user->roles]);
+            // info(Auth::guard('admin')->user());
+            $role = $auth_user->roles[0];
+            $db_route = DatabaseRoute::whereHas('permission')
+                ->with(['permission'])
+                ->whereIn('id', $role->permissions->pluck('database_route_id'))
+                ->get();
+            // info($role->permissions->pluck('id')->all());
+            session(['role_name' => $role->name]);
+            session(['db_route' => $db_route]);
+            // session(['role_name' => 'Super Admin']);
             return redirect()->intended('/manage/home');
         }
 

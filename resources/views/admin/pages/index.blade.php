@@ -19,7 +19,9 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <div class="float-sm-right">
-                    <a href="{{route('manage.pages.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add</a>
+                    @if (Gate::allows('check-auth', 'manage.pages.create'))
+                        <a href="{{route('manage.pages.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add</a>
+                    @endif
                 </div>
             </div><!-- /.col -->
         </div><!-- /.row -->

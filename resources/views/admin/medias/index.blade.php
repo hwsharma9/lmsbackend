@@ -41,9 +41,6 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <pre>@php
-                        print_r($auth_role->toArray());
-                    @endphp</pre>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
@@ -96,4 +93,5 @@
         });
     });
 </script>
+<x-delete-script />
 @endpush

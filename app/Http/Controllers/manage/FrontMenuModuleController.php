@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\FrontMenuModule;
 use App\Http\Requests\StoreFrontMenuModuleRequest;
 use App\Http\Requests\UpdateFrontMenuModuleRequest;
+use Yajra\DataTables\Facades\DataTables;
 
 class FrontMenuModuleController extends Controller
 {
@@ -16,6 +17,20 @@ class FrontMenuModuleController extends Controller
      */
     public function index()
     {
+        if (request()->ajax()) {
+            $data = FrontMenuModule::query()->withTrashed();
+            return DataTables::of($data)
+                ->addIndexColumn('id')
+                ->editColumn('updated_at', function ($row) {
+                    return date('Y-m-d', strtotime($row['updated_at']));
+                })
+                ->addColumn('action', function ($row) {
+                    $btn = '<a class="btn btn-primary" href="' . route('manage.permissions.edit', ['permission' => $row['id']]) . '"><i class="fas fa-edit"></i></a>';
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
         return view('admin.frontmenus.index');
     }
 
@@ -26,7 +41,7 @@ class FrontMenuModuleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.frontmenus.create');
     }
 
     /**

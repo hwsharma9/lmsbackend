@@ -87,7 +87,7 @@ class DatabaseRouteSeeder extends Seeder
                 'route' => 'permissions/{permission}',
                 'named_route' => 'permissions.destroy',
                 'method' => 'delete',
-                'function_name' => 'delete',
+                'function_name' => 'destroy',
                 'deleted_at' => NULL,
                 'created_at' => NOW(),
                 'updated_at' => NOW()
@@ -159,7 +159,7 @@ class DatabaseRouteSeeder extends Seeder
                 'route' => 'databaseroutes/{databaseroute}',
                 'named_route' => 'databaseroutes.destroy',
                 'method' => 'delete',
-                'function_name' => 'delete',
+                'function_name' => 'destroy',
                 'deleted_at' => NULL,
                 'created_at' => NOW(),
                 'updated_at' => NOW()
@@ -243,7 +243,7 @@ class DatabaseRouteSeeder extends Seeder
                 'route' => 'menus/{menu}',
                 'named_route' => 'menus.destroy',
                 'method' => 'delete',
-                'function_name' => 'delete',
+                'function_name' => 'destroy',
                 'deleted_at' => NULL,
                 'created_at' => NOW(),
                 'updated_at' => NOW()
@@ -315,7 +315,7 @@ class DatabaseRouteSeeder extends Seeder
                 'route' => 'users/{user}',
                 'named_route' => 'users.destroy',
                 'method' => 'delete',
-                'function_name' => 'delete',
+                'function_name' => 'destroy',
                 'deleted_at' => NULL,
                 'created_at' => NOW(),
                 'updated_at' => NOW()
@@ -387,7 +387,7 @@ class DatabaseRouteSeeder extends Seeder
                 'route' => 'pages/{page}',
                 'named_route' => 'pages.destroy',
                 'method' => 'delete',
-                'function_name' => 'delete',
+                'function_name' => 'destroy',
                 'deleted_at' => NULL,
                 'created_at' => NOW(),
                 'updated_at' => NOW()
@@ -459,7 +459,7 @@ class DatabaseRouteSeeder extends Seeder
                 'route' => 'roles/{role}',
                 'named_route' => 'roles.destroy',
                 'method' => 'delete',
-                'function_name' => 'delete',
+                'function_name' => 'destroy',
                 'deleted_at' => NULL,
                 'created_at' => NOW(),
                 'updated_at' => NOW()
@@ -531,7 +531,7 @@ class DatabaseRouteSeeder extends Seeder
                 'route' => 'frontmenumodules/{frontmenumodule}',
                 'named_route' => 'frontmenumodules.destroy',
                 'method' => 'delete',
-                'function_name' => 'delete',
+                'function_name' => 'destroy',
                 'deleted_at' => NULL,
                 'created_at' => NOW(),
                 'updated_at' => NOW()
@@ -603,7 +603,7 @@ class DatabaseRouteSeeder extends Seeder
                 'route' => 'admins/{admin}',
                 'named_route' => 'admins.destroy',
                 'method' => 'delete',
-                'function_name' => 'delete',
+                'function_name' => 'destroy',
                 'deleted_at' => NULL,
                 'created_at' => NOW(),
                 'updated_at' => NOW()
@@ -636,6 +636,18 @@ class DatabaseRouteSeeder extends Seeder
                 'id' => 52,
                 'resides_at' => 'manage',
                 'controller_name' => 'MediaController',
+                'route' => 'medias',
+                'named_route' => 'medias.store',
+                'method' => 'post',
+                'function_name' => 'store',
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
+            [
+                'id' => 53,
+                'resides_at' => 'manage',
+                'controller_name' => 'MediaController',
                 'route' => 'medias/{media}/edit',
                 'named_route' => 'medias.edit',
                 'method' => 'get',
@@ -645,7 +657,7 @@ class DatabaseRouteSeeder extends Seeder
                 'updated_at' => NOW()
             ],
             [
-                'id' => 53,
+                'id' => 54,
                 'resides_at' => 'manage',
                 'controller_name' => 'MediaController',
                 'route' => 'medias/{media}/update',
@@ -657,19 +669,19 @@ class DatabaseRouteSeeder extends Seeder
                 'updated_at' => NOW()
             ],
             [
-                'id' => 54,
+                'id' => 55,
                 'resides_at' => 'manage',
                 'controller_name' => 'MediaController',
                 'route' => 'medias/{media}',
                 'named_route' => 'medias.destroy',
                 'method' => 'delete',
-                'function_name' => 'delete',
+                'function_name' => 'destroy',
                 'deleted_at' => NULL,
                 'created_at' => NOW(),
                 'updated_at' => NOW()
             ],
             [
-                'id' => 55,
+                'id' => 56,
                 'resides_at' => 'manage',
                 'controller_name' => 'HomeController',
                 'route' => 'home',

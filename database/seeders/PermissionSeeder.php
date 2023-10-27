@@ -397,6 +397,53 @@ class PermissionSeeder extends Seeder
                 'created_at' => NOW(),
                 'updated_at' => NOW()
             ],
+
+
+            [
+                'id' => 43,
+                'name' => 'Show Front Menus Module List',
+                'guard_name' => 'admin',
+                'database_route_id' => 38,
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
+            [
+                'id' => 44,
+                'name' => 'Show Create Front Menus Module Page',
+                'guard_name' => 'admin',
+                'database_route_id' => 39,
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
+            [
+                'id' => 45,
+                'name' => 'Give Store Front Menus Module',
+                'guard_name' => 'admin',
+                'database_route_id' => 40,
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
+            [
+                'id' => 46,
+                'name' => 'Show Edit Front Menus Module Page',
+                'guard_name' => 'admin',
+                'database_route_id' => 41,
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
+            [
+                'id' => 47,
+                'name' => 'Give Update Front Menus Module Page',
+                'guard_name' => 'admin',
+                'database_route_id' => 42,
+                'deleted_at' => NULL,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+            ],
         ]);
     }
 }

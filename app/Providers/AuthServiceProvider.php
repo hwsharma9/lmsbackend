@@ -27,6 +27,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('check-auth', function ($user, $route = '') {
+            // info('provider => ' . $route);
             $route_service = new RouteService();
             $current_route = $route_service->getCurrentRoute($route);
             $permission_name = $route_service->getPermissionNameByRoute($current_route);

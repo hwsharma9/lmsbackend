@@ -20,6 +20,7 @@ class CreateUploadsTable extends Migration
             $table->string('file_path', 500);
             $table->string('folder', 100);
             $table->string('original_name', 255);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -42,10 +42,15 @@ class RoleController extends Controller
             return DataTables::of($data)
                 ->addIndexColumn('id')
                 ->addColumn('action', function ($row) {
+                    $action = view('components.list-actions', [
+                        'actions' => [
+                            'edit' => 'manage.roles.edit',
+                        ],
+                        'model' => $row
+                    ]);
+                    $action = $action->render();
 
-                    $btn = '<a class="btn btn-primary" href="' . route('manage.roles.edit', ['role' => $row['id']]) . '"><i class="fas fa-edit"></i></a>';
-
-                    return $btn;
+                    return $action;
                 })
                 ->editColumn('updated_at', function ($row) {
                     return date('Y-m-d', strtotime($row['updated_at']));

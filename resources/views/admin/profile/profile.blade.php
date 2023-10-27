@@ -27,72 +27,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card card-primary">
-                <div class="card-header">{{ __('UPLOAD PROFILE IMAGE') }}</div>
-
-                <div class="card-body">
-                    @if (session('image_uploaded'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('image_uploaded') }}
-                    </div>
-                    @endif
-
-                    <form method="POST" action="{{route('manage.profile.image-upload', ['admin' => $admin->id])}}" id="quickForm" enctype="multipart/form-data">
-                        @csrf
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="image_file" style="width: 100%">Profile Image</label>
-                                        <img src="{{$profile_image}}" alt="Profile Photo" id="preview"><br>
-                                        <input type="file" name="image_file" id="image_file" class="mt-5"><br>
-                                        <div id="img-error" class="text-danger">
-                                            @error('image_file')
-                                            <span class="text-danger">{{$message}}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="designation">Image Attributes</label>
-                                        <table class="table">
-											<tr>
-												<th>File size</th>
-												<td><input type="text" readonly id="filesize" name="filesize" /></td>
-											</tr>
-											<tr>
-												<th>Type</th>
-												<td><input type="text" readonly id="filetype" name="filetype" /></td>
-											</tr>
-											<tr>
-												<th>Image dimension</th>
-												<td><input type="text" readonly id="filedim" name="filedim" /></td>
-											</tr>
-											<tr>
-												<th>Width</th>
-												<td><input type="text" readonly id="w" name="w" /></td>
-											</tr>
-											<tr>
-												<th>Height</th>
-												<td><input type="text" readonly id="h" name="h" /></td>
-											</tr>
-										</table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Upload</button>
-                            <button type="button" class="btn btn-secondary">Clear</button>
-                            <a href="{{route('manage.home')}}" class="btn btn-info">Home</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        
         <div class="col-md-12">
             <div class="card card-primary">
                 <div class="card-header">{{ __('VIEW PROFILE DETAILS') }}</div>
@@ -155,6 +90,72 @@
                         <!-- /.card-body -->
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="button" class="btn btn-secondary">Clear</button>
+                            <a href="{{route('manage.home')}}" class="btn btn-info">Home</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">{{ __('UPLOAD PROFILE IMAGE') }}</div>
+
+                <div class="card-body">
+                    @if (session('image_uploaded'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('image_uploaded') }}
+                    </div>
+                    @endif
+
+                    <form method="POST" action="{{route('manage.profile.image-upload', ['admin' => $admin->id])}}" id="quickForm" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="image_file" style="width: 100%">Profile Image</label>
+                                        <img src="{{$profile_image}}" alt="Profile Photo" id="preview"><br>
+                                        <input type="file" name="image_file" id="image_file" class="mt-5"><br>
+                                        <div id="img-error" class="text-danger">
+                                            @error('image_file')
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="designation">Image Attributes</label>
+                                        <table class="table">
+											<tr>
+												<th>File size</th>
+												<td><input type="text" readonly id="filesize" name="filesize" /></td>
+											</tr>
+											<tr>
+												<th>Type</th>
+												<td><input type="text" readonly id="filetype" name="filetype" /></td>
+											</tr>
+											<tr>
+												<th>Image dimension</th>
+												<td><input type="text" readonly id="filedim" name="filedim" /></td>
+											</tr>
+											<tr>
+												<th>Width</th>
+												<td><input type="text" readonly id="w" name="w" /></td>
+											</tr>
+											<tr>
+												<th>Height</th>
+												<td><input type="text" readonly id="h" name="h" /></td>
+											</tr>
+										</table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Upload</button>
                             <button type="button" class="btn btn-secondary">Clear</button>
                             <a href="{{route('manage.home')}}" class="btn btn-info">Home</a>
                         </div>
