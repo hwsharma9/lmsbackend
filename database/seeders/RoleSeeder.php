@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\AdminMenu;
+use App\Models\Permission;
 use App\Models\Role;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -78,14 +79,16 @@ class RoleSeeder extends Seeder
             ],
         ];
         Role::insert($roles);
-        $roles = Role::all();
-        foreach ($roles as $role) {
-            if ($role->range !== '') {
-                $menu_ids = explode(',', $role->range);
-                $menus = AdminMenu::whereHas('permission')->whereIn('id', $menu_ids)->with(['permission'])->get();
-                // print_r($menus->pluck('permission.id')->toArray());
-                $role->givePermissionTo($menus->pluck('permission.id')->toArray());
-            }
-        }
+        $roles = Role::find(1);
+        $permissions = Permission::select(['id'])->get();
+        $roles->givePermissionTo($permissions->pluck('id')->all());
+        // foreach ($roles as $role) {
+        //     if ($role->range !== '') {
+        //         $menu_ids = explode(',', $role->range);
+        //         $menus = AdminMenu::whereHas('permission')->whereIn('id', $menu_ids)->with(['permission'])->get();
+        //         // print_r($menus->pluck('permission.id')->toArray());
+        //         $role->givePermissionTo($menus->pluck('permission.id')->toArray());
+        //     }
+        // }
     }
 }
