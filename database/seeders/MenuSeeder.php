@@ -365,12 +365,12 @@ class MenuSeeder extends Seeder
                 's_order' => 67,
                 'class_id' => NULL,
                 'action' => 'manage/frontmenumodules',
-                'permission_id' => NULL,
+                'permission_id' => 43,
                 'tab_same_new' => 1,
                 'is_active' => 1,
                 'deleted_at' => NULL,
                 'created_at' => '2023-10-13 05:22:25',
-                'updated_at' => '2023-10-13 05:22:25'
+                'updated_at' => '2023-10-27 05:41:03'
             ],
             [
                 'id' => 107,

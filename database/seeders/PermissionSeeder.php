@@ -18,15 +18,15 @@ class PermissionSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('permissions')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-        Permission::insert([
+        $permissions = [
             [
                 'id' => 1,
                 'name' => 'Show Admins List',
                 'guard_name' => 'admin',
                 'database_route_id' => 44,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 2,
@@ -34,8 +34,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 45,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 3,
@@ -43,8 +43,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 46,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 4,
@@ -52,8 +52,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 47,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 5,
@@ -61,8 +61,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 48,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 6,
@@ -70,8 +70,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 20,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 7,
@@ -79,8 +79,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 21,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 8,
@@ -88,8 +88,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 22,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 9,
@@ -97,8 +97,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 23,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 10,
@@ -106,8 +106,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 24,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 11,
@@ -115,8 +115,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 14,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 12,
@@ -124,8 +124,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 26,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 13,
@@ -133,8 +133,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 27,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 14,
@@ -142,8 +142,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 28,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 15,
@@ -151,8 +151,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 29,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 16,
@@ -160,8 +160,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 30,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 17,
@@ -169,8 +169,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 32,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 18,
@@ -178,8 +178,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 33,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 19,
@@ -187,8 +187,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 34,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 20,
@@ -196,8 +196,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 35,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 21,
@@ -205,8 +205,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 36,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 22,
@@ -214,8 +214,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => NULL,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 23,
@@ -223,8 +223,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => NULL,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 24,
@@ -232,8 +232,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 1,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 25,
@@ -241,8 +241,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 2,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 26,
@@ -250,8 +250,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 4,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 27,
@@ -259,8 +259,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 3,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 28,
@@ -268,8 +268,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 5,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 29,
@@ -277,17 +277,17 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => NULL,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 30,
                 'name' => 'Dashboard',
                 'guard_name' => 'admin',
-                'database_route_id' => 52,
+                'database_route_id' => 56,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 31,
@@ -295,8 +295,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 7,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 32,
@@ -304,8 +304,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 8,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 33,
@@ -313,8 +313,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 9,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 34,
@@ -322,8 +322,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 10,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 35,
@@ -331,8 +331,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 11,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 36,
@@ -340,8 +340,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 50,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 37,
@@ -349,8 +349,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 51,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 38,
@@ -358,8 +358,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 52,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 39,
@@ -367,8 +367,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 53,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 40,
@@ -376,8 +376,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 54,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 41,
@@ -385,8 +385,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 16,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 42,
@@ -394,19 +394,17 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 18,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
-
-
             [
                 'id' => 43,
                 'name' => 'Show Front Menus Module List',
                 'guard_name' => 'admin',
                 'database_route_id' => 38,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 44,
@@ -414,8 +412,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 39,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 45,
@@ -423,8 +421,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 40,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 46,
@@ -432,8 +430,8 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 41,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
             [
                 'id' => 47,
@@ -441,9 +439,19 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'admin',
                 'database_route_id' => 42,
                 'deleted_at' => NULL,
-                'created_at' => NOW(),
-                'updated_at' => NOW()
+                'created_at' => '2023-10-27 05:39:29',
+                'updated_at' => '2023-10-27 05:39:29'
             ],
-        ]);
+            [
+                'id' => 48,
+                'name' => 'Give permission to delete media',
+                'guard_name' => 'admin',
+                'database_route_id' => 55,
+                'deleted_at' => NULL,
+                'created_at' => '2023-10-27 10:27:38',
+                'updated_at' => '2023-10-27 10:27:38'
+            ],
+        ];
+        Permission::insert($permissions);
     }
 }

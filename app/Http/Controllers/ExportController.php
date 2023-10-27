@@ -47,13 +47,6 @@ class ExportController extends Controller
 
     public function exportTable($table)
     {
-        $auth_user = Admin::with(['roles.permissions'])->find(Auth::guard('admin')->id());
-        $db_route = DatabaseRoute::whereHas('permission')
-            ->with(['permission'])
-            ->whereIn('id', $auth_user->roles[0]->permissions->pluck('database_route_id'))
-            ->get();
-        return [$auth_user, $db_route];
-        return Auth::guard('admin')->user()->roles;
         $records = DB::table($table)->get();
         if ($records) {
             $columns = array_keys((array) $records[0]);
